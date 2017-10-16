@@ -308,11 +308,11 @@ define(["jquery", "underscore-min",
             //    layers = options.backgroundSurveys;
             //    callbackLayersLoaded(layers);
             //} else {
-                layers = $.proxy(loadBackgroundLayersFromFile, this)(layers, this.options.skyCtx.layers, this.options.configuration.mizarBaseUrl + "/data/");
+                layers = $.proxy(loadBackgroundLayersFromFile, this)(layers, this.options.skyCtx.layers, this.options.configuration.mizarBaseUrl + "data/");
             //}
 
             // Load additionals layers
-            $.proxy(loadAdditionalLayersFromFile, this)(this.options.planetCtx.slice(), this.options.configuration.mizarBaseUrl + "/data/");
+            $.proxy(loadAdditionalLayersFromFile, this)(this.options.planetCtx.slice(), this.options.configuration.mizarBaseUrl + "data/");
 
             this.subscribeCtx("baseLayersReady", RenderingGlobeFinished);
 
@@ -355,18 +355,18 @@ define(["jquery", "underscore-min",
                         });
                 }
             });
-            if ((options) && (options.global) && (options.global.displayWarning === true)) {
-              ErrorDialog.setDisplayWarning(true);
-              $('#warningButton').on('click', function () {
-                  if (ErrorDialog.isActive() === true) {
-                    ErrorDialog.hide();
-                  } else {
-                    ErrorDialog.view();
-                  }
-              })
-            } else {
-              ErrorDialog.setDisplayWarning(false);
-            }
+            //if ((options) && (options.global) && (options.global.displayWarning === true)) {
+            //  ErrorDialog.setDisplayWarning(true);
+            //  $('#warningButton').on('click', function () {
+            //      if (ErrorDialog.isActive() === true) {
+            //        ErrorDialog.hide();
+            //      } else {
+            //        ErrorDialog.view();
+            //      }
+            //  })
+            //} else {
+            //  ErrorDialog.setDisplayWarning(false);
+            //}
         };
 
 
