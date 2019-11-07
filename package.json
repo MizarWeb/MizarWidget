@@ -70,7 +70,7 @@
   "dependencies": {
     "DataCube": "github:MizarWeb/DataCube#master",
     "http-server": "^0.11.1",
-    "jquery": "^2.2.4",
+    "jquery": "^3.4.1",
     "jquery-datetimepicker": "^2.5.16",
     "jquery-mousewheel": "^3.1.13",
     "jquery-once": "^2.2.1",
