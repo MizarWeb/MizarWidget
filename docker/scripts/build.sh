@@ -35,11 +35,10 @@ cd MizarWidget
 git checkout ${BUILD_VERSION}
 git submodule init
 git submodule update
+
 # install grunt
 npm install -g grunt-cli grunt
-# remove uglify
-npm install -g json \
-    &&  json -I -f package.json -e "this.scripts['build:prod']='r.js -o build/buildMizarWidget.js'"
+
 # Build
 cd external/Mizar
 npm install
@@ -49,7 +48,6 @@ npm run license
 
 cd ../..
 npm install
-npm run build:datacube
 npm run build:dist
 
 # Install MizarWidget on the web server.
