@@ -506,12 +506,26 @@ define(["jquery", "moment", "./AdditionalLayersCore", "./PickingManager", "./Dyn
                         $('#' + categoryId).closest(".category").show();
                     }
                 }
+                if(gwLayer.index && gwLayer.categoryIndex !== "none" ){
+                    $("h3:contains('"+category+"')").parent().data("index", gwLayer.index);
+                    sortCategories();
+
+                }
 
                 // Add HTML
                 createHtmlForAdditionalLayer(gwLayer, categoryId);
 
                 gwLayer.subscribe(mizarWidgetAPI.EVENT_MSG.LAYER_VISIBILITY_CHANGED, onVisibilityChange);
             }
+        }
+
+        function sortCategories(){
+            var $categories = $("#accordion").find(".category");
+            $categories.sort(function(a,b) {
+                aIndex = $(a).data('categoryIndex')  || "none";
+                bIndex = $(b).data('categoryIndex') || "none";
+                return aIndex > bIndex;
+           }).appendTo("#accordion");
         }
 
         /**************************************************************************************************************/
